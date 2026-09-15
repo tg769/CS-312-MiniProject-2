@@ -1,0 +1,16 @@
+body {
+  background-color: #f8f5f2;
+}
+
+.card-img-top {
+  height: 220px;
+  object-fit: cover;
+}
+
+.navbar-brand {
+  font-weight: bold;
+}
+
+footer p {
+  font-size: 0.85rem;
+}

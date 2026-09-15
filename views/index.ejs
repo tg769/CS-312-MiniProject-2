@@ -1,0 +1,35 @@
+<%- include('partials/header') %>
+
+<div class="row">
+  <div class="col-md-8 offset-md-2">
+    <h1 class="mb-4">Find a Cocktail</h1>
+    <p class="text-muted">Search for a drink by name, browse by category, or let us pick one for you.</p>
+
+    <form action="/search" method="GET" class="mb-3">
+      <label for="name" class="form-label">Search by name</label>
+      <div class="input-group">
+        <input type="text" id="name" name="name" class="form-control" placeholder="e.g. margarita" required>
+        <button class="btn btn-primary" type="submit">Search</button>
+      </div>
+    </form>
+
+    <form action="/category" method="GET" class="mb-4">
+      <label for="category" class="form-label">Browse by category</label>
+      <div class="input-group">
+        <select id="category" name="name" class="form-select" required>
+          <option value="" disabled selected>Choose a category</option>
+          <% categories.forEach(function(cat) { %>
+            <option value="<%= cat.strCategory %>"><%= cat.strCategory %></option>
+          <% }); %>
+        </select>
+        <button class="btn btn-secondary" type="submit">Browse</button>
+      </div>
+    </form>
+
+    <div class="text-center">
+      <a href="/random" class="btn btn-success btn-lg">Surprise Me</a>
+    </div>
+  </div>
+</div>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,21 @@
+<%- include('partials/header') %>
+
+<h1 class="mb-4"><%= heading %></h1>
+
+<div class="row">
+  <% drinks.forEach(function(drink) { %>
+    <div class="col-sm-6 col-md-4 mb-4">
+      <div class="card h-100">
+        <img src="<%= drink.strDrinkThumb %>" class="card-img-top" alt="<%= drink.strDrink %>">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title"><%= drink.strDrink %></h5>
+          <a href="/cocktail/<%= drink.idDrink %>" class="btn btn-outline-primary mt-auto">View Recipe</a>
+        </div>
+      </div>
+    </div>
+  <% }); %>
+</div>
+
+<a href="/" class="btn btn-link">Back to search</a>
+
+<%- include('partials/footer') %>
