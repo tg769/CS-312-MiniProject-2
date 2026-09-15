@@ -1,47 +1,28 @@
 # CS 312 Mini Project 2 - Cocktail Finder
 
-A small Node.js/Express web app that lets a user look up cocktail recipes using
-the public TheCocktailDB API. Built with Express, EJS, and Axios.
+Web app for mini project 2. Built with Node, Express, EJS, and Axios.
 
-## Features
+You can search for a cocktail by name, browse by category, or just hit
+"Surprise Me" for a random one. Clicking into a drink shows the picture,
+ingredients/measurements, and instructions from TheCocktailDB. As a bonus
+I also pulled in a second API (TheMealDB) so each recipe page suggests a
+random food pairing too. Neither API needs a key.
 
-- Search for a cocktail by name
-- Browse cocktails by category (dropdown is filled in from the API)
-- Get a random cocktail recipe
-- Recipe page shows the image, ingredients with measurements, and instructions
-- Each recipe page also shows a random food pairing suggestion pulled from a
-  second API, TheMealDB
-- Errors (bad search, no results, API request failing) show a message and let
-  the user go back and try again
+If a search comes back empty or a request to the API fails, it shows an
+error page instead of crashing, with a link back to try again.
 
-## APIs used
-
-- [TheCocktailDB](https://www.thecocktaildb.com/api.php) - main data source for cocktails
-- [TheMealDB](https://www.themealdb.com/api.php) - second API, used for the food pairing suggestion on the recipe page
-
-Both are free and do not require signing up for a personal key.
-
-## Setup
-
-1. Install dependencies:
-
-   ```
-   npm install
-   ```
-
-2. Start the server:
-
-   ```
-   npm start
-   ```
-
-3. Open `http://localhost:3000` in your browser.
-
-## Project structure
+## How to run it
 
 ```
-app.js              entry point, sets up express and routes
-routes/cocktails.js  all the routes (search, category, random, recipe page)
-views/               ejs templates
-public/css/          stylesheet
+npm install
+npm start
 ```
+
+then go to http://localhost:3000
+
+## Files
+
+- app.js - sets everything up
+- routes/cocktails.js - the actual routes
+- views/ - ejs pages
+- public/css/style.css - styling
